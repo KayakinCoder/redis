@@ -4,8 +4,10 @@ const app = express();
 const port = 3000;
 
 // connect to redis. see https://github.com/redis/node-redis/blob/master/docs/client-configuration.md
+const redisPass = process.env.REDIS_PASSWORD;
+const redisPort = process.env.REDIS_PORT;
 const client = createClient({
-  url: 'redis://default:redispass2@127.0.0.1:6379'
+  url: `redis://default:${redisPass}@127.0.0.1:${redisPort}`
 });
 client.on('error', err => console.log('Redis Client Error', err));
 await client.connect();
