@@ -1,8 +1,11 @@
+# for my devcontainer
+cd /workspaces/tools/redis
+
 # start docker, which contains our redis db
-docker-compose -f /workspaces/tools/redis/docker-compose.yml up -d
+docker-compose -f docker-compose.yml up -d
 
 # install express and redis node client
-cd /workspaces/tools/redis && npm i express && npm i redis
+npm i express && npm i redis
 
 # start the express server
-node --env-file=.env /workspaces/tools/redis/express/app.mjs
+node --env-file=.env ./express/app.mjs

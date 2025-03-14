@@ -1,5 +1,5 @@
 /node_modules
 
-# not including a lockfile so that we always get the latest version of express
+# not including these so that it's easy to get the latest versions of packages
 package.json
 package-lock.json
