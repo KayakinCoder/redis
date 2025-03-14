@@ -10,7 +10,7 @@ services:
       - '6379:6379'
     # starts the redis server, saves data to disk every 20 seconds so it can persist between restarts, and
     # sets a password
-    command: redis-server --save 20 1 --loglevel warning --requirepass redispass
+    command: redis-server --save 20 1 --loglevel warning --requirepass ${REDIS_PASSWORD}
     # for persisting data to disk
     volumes: 
       - cache:/data
